@@ -142,13 +142,43 @@
   .feedback{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.05em;color:var(--teal);margin-top:.4rem;opacity:0;transition:.3s}
   .feedback.show{opacity:1}
 
-  #s14 h1{font-size:clamp(2.4rem,6.5vw,5.5rem);color:var(--cream)}
-  #s14 h1 em{color:var(--gold);font-style:italic;font-weight:500}
+  #s16 h1{font-size:clamp(2.4rem,6.5vw,5.5rem);color:var(--cream)}
+  #s16 h1 em{color:var(--gold);font-style:italic;font-weight:500}
   .takeaways{margin-top:1.8rem;display:flex;flex-direction:column;gap:.9rem}
   .ta{display:flex;gap:1rem;align-items:baseline;font-size:1.15rem;color:rgba(251,246,238,.85)}
   .ta b{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:.88rem}
   .ta .rust{color:#f0865a;font-weight:600}
   .ta .teal{color:#5bb7a8;font-weight:600}
+
+  /* Detailed numbered use cards */
+  .uselist{display:flex;flex-direction:column;gap:.7rem;margin-top:.5rem}
+  .ucard{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;background:var(--cream);border:1.5px solid var(--ink);border-radius:13px;padding:.95rem 1.3rem}
+  .ucard.rust{box-shadow:4px 4px 0 var(--rust)}
+  .ucard.teal{box-shadow:4px 4px 0 var(--teal)}
+  .ucard .n{font-family:'Fraunces',serif;font-weight:900;font-size:1.7rem;line-height:1}
+  .ucard.rust .n{color:var(--rust)}
+  .ucard.teal .n{color:var(--teal)}
+  .ucard h3{font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:.1rem}
+  .ucard .ulabel{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+  .ucard .eg{font-family:'Fraunces',serif;font-style:italic;font-size:1.02rem}
+  .ucard.rust .eg{color:var(--rust)}
+  .ucard.teal .eg{color:var(--teal)}
+  .ucard .es{font-size:.82rem;color:#6a5b4c;display:block;margin-top:.05rem}
+  .ucard .en{font-size:.82rem;color:#473b30;margin-top:.35rem;border-top:1px dashed var(--line);padding-top:.35rem}
+  .ucard.rust .en b{color:var(--rust)}
+  .ucard.teal .en b{color:var(--teal)}
+
+  /* English explanation block */
+  .en-note{margin-top:1rem;background:rgba(14,93,82,.07);border:1.5px dashed var(--teal);border-radius:14px;padding:1rem 1.3rem;max-width:66ch}
+  .en-note .flag{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:.5rem;margin-bottom:.45rem}
+  .en-note .flag::before{content:"EN";background:var(--teal);color:#fff;padding:.1rem .4rem;border-radius:5px;font-weight:600}
+  .en-note p{font-family:'Fraunces',serif;font-size:1.05rem;line-height:1.5;color:#2e2a24;font-style:italic}
+  .en-note p b{color:var(--rust);font-style:normal}
+  .dark .en-note{background:rgba(217,156,43,.1);border-color:var(--gold)}
+  .dark .en-note .flag{color:var(--gold)}
+  .dark .en-note .flag::before{background:var(--gold);color:var(--ink)}
+  .dark .en-note p{color:rgba(251,246,238,.9)}
+  .dark .en-note p b{color:var(--gold)}
 
   .pagemark{position:absolute;top:5vh;right:8vw;font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--line);z-index:1}
   .dark .pagemark{color:rgba(244,236,224,.25)}
@@ -185,7 +215,7 @@
     </div>
     <div class="cover-meta">
       <span>Lección de inglés · A2 – B1</span>
-      <span>14 diapositivas · usa ← →</span>
+      <span>22 diapositivas · usa ← →</span>
     </div>
   </section>
 
@@ -204,6 +234,10 @@
         <tr><td>3. Sin do/does</td><td>Para preguntas y negaciones no usan auxiliar</td><td class="form"><span class="ok">Should I go?</span> &nbsp; <span class="no">Do I should</span></td></tr>
       </tbody>
     </table>
+    </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>A <b>modal verb</b> doesn't show an action — it shows how the speaker feels about it: is it necessary, possible, or just a good idea? Modal verbs never take <b>"to"</b>, never add <b>"-s"</b>, and never use <b>do/does</b>.</p>
     </div>
   </section>
 
@@ -226,6 +260,10 @@
         <div class="strength"><b>Fuerza</b><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
       </div>
     </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>Use <b>must</b> when there is <b>no choice</b> — a rule, a law, or something you strongly feel. Use <b>should</b> when you give <b>advice or an opinion</b> — the person can still decide. Same grammar, very different strength.</p>
+    </div>
   </section>
 
   <!-- 4 SCALE -->
@@ -241,6 +279,10 @@
       <div class="stop" style="left:64%"><div class="marker"></div><div class="w" style="color:var(--gold)">have to</div><div class="lvl">obligación externa</div></div>
       <div class="stop" style="left:88%"><div class="marker"></div><div class="w" style="color:var(--rust)">must</div><div class="lvl">obligación fuerte</div></div>
     </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>Think of modals as a <b>scale of pressure</b>, from soft to strong: <b>could</b> (a light option) → <b>should</b> (a recommendation) → <b>have to</b> (an outside rule) → <b>must</b> (a strong obligation). Pick the word that matches how much pressure you mean.</p>
+    </div>
   </section>
 
   <!-- 5 MUST USES -->
@@ -252,6 +294,10 @@
       <div class="use"><div class="ico">📋</div><h3>1. Obligación</h3><p>Reglas, normas y leyes que hay que cumplir.</p><span class="eg">You must wear a helmet.</span></div>
       <div class="use"><div class="ico">🔥</div><h3>2. Necesidad fuerte</h3><p>Algo que el hablante siente como urgente o importante.</p><span class="eg">I must call my mother today.</span></div>
       <div class="use"><div class="ico">🧠</div><h3>3. Deducción lógica</h3><p>Estás casi seguro de algo por la evidencia.</p><span class="eg">She's not here — she must be sick.</span></div>
+    </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>We use <b>must</b> for three things: a strong <b>obligation</b> (a rule we have to follow), a strong personal <b>need</b>, and a confident <b>deduction</b> — when we are almost sure something is true based on the evidence.</p>
     </div>
   </section>
 
@@ -266,6 +312,10 @@
       <div class="ex"><span class="en">It's late — they <span class="hl">must</span> be home by now.</span><span class="es">Es tarde; ya deben de estar en casa.</span><span class="note">Deducción: estoy casi seguro</span></div>
       <div class="ex"><span class="en">Students <span class="hl">must not</span> use phones in the exam.</span><span class="es">Los estudiantes no deben usar el móvil en el examen.</span><span class="note">Must not = prohibición total</span></div>
     </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>Notice the range: a <b>law</b> at the airport, a personal <b>need</b> tonight, a logical <b>guess</b> ("they must be home"), and a <b>prohibition</b> ("must not"). In every case, <b>must</b> feels strong and leaves no real choice.</p>
+    </div>
   </section>
 
   <!-- 7 SHOULD USES -->
@@ -277,6 +327,10 @@
       <div class="use t"><div class="ico">💡</div><h3>1. Consejo</h3><p>Recomendar lo que crees que es mejor para alguien.</p><span class="eg">You should see a doctor.</span></div>
       <div class="use t"><div class="ico">⚖️</div><h3>2. Opinión</h3><p>Decir lo que consideras correcto o ideal.</p><span class="eg">They should apologize.</span></div>
       <div class="use t"><div class="ico">🔮</div><h3>3. Expectativa</h3><p>Algo que probablemente va a pasar.</p><span class="eg">The train should arrive soon.</span></div>
+    </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>We use <b>should</b> to give <b>advice</b>, to share an <b>opinion</b> about what is right, and to talk about an <b>expectation</b> — something we believe will probably happen.</p>
     </div>
   </section>
 
@@ -291,11 +345,77 @@
       <div class="ex teal"><span class="en">This movie <span class="hl">should</span> be really good.</span><span class="es">Esta película debería ser muy buena.</span><span class="note">Expectativa probable</span></div>
       <div class="ex teal"><span class="en">You <span class="hl">shouldn't</span> eat so late at night.</span><span class="es">No deberías comer tan tarde por la noche.</span><span class="note">Shouldn't = consejo en negativo</span></div>
     </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p><b>Should</b> sounds friendly and kind. It's perfect for advice ("you should rest"), suggestions ("we should leave"), and gentle warnings ("you shouldn't…"). The other person still gets to decide.</p>
+    </div>
+  </section>
+
+  <!-- 9 MUST · WHEN TO USE (detailed) -->
+  <section class="slide" id="s9a">
+    <div class="pagemark">08</div>
+    <span class="kicker stagger">MUST · ¿Cuándo usarlo? · 1–5</span>
+    <h2 class="stagger" style="font-size:clamp(1.5rem,3.6vw,2.3rem);color:var(--rust);margin-bottom:.5rem">Lista completa de usos de "must"</h2>
+    <div class="uselist stagger">
+      <div class="ucard rust"><div class="n">1</div><div><div class="ulabel">Obligación / regla</div><h3>Strong obligation</h3><div class="eg">You must wear a seatbelt.<span class="es">Debes llevar el cinturón.</span></div><div class="en"><b>Use it</b> for rules and laws everyone has to follow.</div></div></div>
+      <div class="ucard rust"><div class="n">2</div><div><div class="ulabel">Necesidad personal fuerte</div><h3>Personal need</h3><div class="eg">I must finish this today.<span class="es">Tengo que terminar esto hoy.</span></div><div class="en"><b>Use it</b> when you strongly feel something is necessary.</div></div></div>
+      <div class="ucard rust"><div class="n">3</div><div><div class="ulabel">Deducción lógica</div><h3>Logical deduction</h3><div class="eg">She's quiet — she must be tired.<span class="es">Está callada; debe de estar cansada.</span></div><div class="en"><b>Use it</b> when you are almost sure, based on evidence.</div></div></div>
+      <div class="ucard rust"><div class="n">4</div><div><div class="ulabel">Prohibición</div><h3>Prohibition (mustn't)</h3><div class="eg">You must not park here.<span class="es">No debes aparcar aquí.</span></div><div class="en"><b>Use "mustn't"</b> to say something is forbidden.</div></div></div>
+      <div class="ucard rust"><div class="n">5</div><div><div class="ulabel">Recomendación entusiasta</div><h3>Strong recommendation</h3><div class="eg">You must see this movie!<span class="es">¡Tienes que ver esta película!</span></div><div class="en"><b>Use it</b> to recommend something with real enthusiasm.</div></div></div>
+    </div>
+  </section>
+
+  <!-- 9b MUST · WHEN TO USE (cont) -->
+  <section class="slide" id="s9b">
+    <div class="pagemark">09</div>
+    <span class="kicker stagger">MUST · ¿Cuándo usarlo? · 6–9</span>
+    <h2 class="stagger" style="font-size:clamp(1.5rem,3.6vw,2.3rem);color:var(--rust);margin-bottom:.5rem">…y los usos avanzados</h2>
+    <div class="uselist stagger">
+      <div class="ucard rust"><div class="n">6</div><div><div class="ulabel">Invitación insistente</div><h3>Insistent invitation</h3><div class="eg">You must come to dinner!<span class="es">¡Tienes que venir a cenar!</span></div><div class="en"><b>Use it</b> to invite someone warmly and insistently.</div></div></div>
+      <div class="ucard rust"><div class="n">7</div><div><div class="ulabel">Deducción sobre el pasado</div><h3>Must have</h3><div class="eg">They must have left already.<span class="es">Deben de haberse ido ya.</span></div><div class="en"><b>Use "must have + participle"</b> for a sure guess about the past.</div></div></div>
+      <div class="ucard rust"><div class="n">8</div><div><div class="ulabel">Énfasis / sorpresa</div><h3>Emphasis</h3><div class="eg">You must be joking!<span class="es">¡Debes de estar bromeando!</span></div><div class="en"><b>Use it</b> in fixed expressions to show surprise or disbelief.</div></div></div>
+      <div class="ucard rust"><div class="n">9</div><div><div class="ulabel">Frases fijas</div><h3>Set phrases</h3><div class="eg">I must say… / I must admit…<span class="es">Debo decir… / Debo admitir…</span></div><div class="en"><b>Use it</b> in common phrases native speakers say a lot.</div></div></div>
+    </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>The thread through all of these is <b>no real choice</b>: a rule, a strong need, a confident conclusion, or a warm push. <b>Must</b> always sounds strong.</p>
+    </div>
+  </section>
+
+  <!-- 9c SHOULD · WHEN TO USE (detailed) -->
+  <section class="slide" id="s9c">
+    <div class="pagemark">10</div>
+    <span class="kicker stagger">SHOULD · ¿Cuándo usarlo? · 1–5</span>
+    <h2 class="stagger" style="font-size:clamp(1.5rem,3.6vw,2.3rem);color:var(--teal);margin-bottom:.5rem">Lista completa de usos de "should"</h2>
+    <div class="uselist stagger">
+      <div class="ucard teal"><div class="n">1</div><div><div class="ulabel">Dar un consejo</div><h3>Giving advice</h3><div class="eg">You should drink more water.<span class="es">Deberías beber más agua.</span></div><div class="en"><b>Use it</b> to tell someone what you think is good for them.</div></div></div>
+      <div class="ucard teal"><div class="n">2</div><div><div class="ulabel">Dar una opinión</div><h3>Giving an opinion</h3><div class="eg">They should lower the prices.<span class="es">Deberían bajar los precios.</span></div><div class="en"><b>Use it</b> to say what you believe is right or fair.</div></div></div>
+      <div class="ucard teal"><div class="n">3</div><div><div class="ulabel">Hacer una sugerencia</div><h3>Making a suggestion</h3><div class="eg">We should try that new café.<span class="es">Deberíamos probar ese café nuevo.</span></div><div class="en"><b>Use it</b> to propose an idea to do together.</div></div></div>
+      <div class="ucard teal"><div class="n">4</div><div><div class="ulabel">Expectativa / probabilidad</div><h3>Expectation</h3><div class="eg">The train should arrive at 6.<span class="es">El tren debería llegar a las 6.</span></div><div class="en"><b>Use it</b> for something you expect to happen, based on logic.</div></div></div>
+      <div class="ucard teal"><div class="n">5</div><div><div class="ulabel">Pedir consejo (pregunta)</div><h3>Asking for advice</h3><div class="eg">What should I do?<span class="es">¿Qué debería hacer?</span></div><div class="en"><b>Use it</b> in questions to ask for someone's recommendation.</div></div></div>
+    </div>
+  </section>
+
+  <!-- 9d SHOULD · WHEN TO USE (cont) -->
+  <section class="slide" id="s9d">
+    <div class="pagemark">11</div>
+    <span class="kicker stagger">SHOULD · ¿Cuándo usarlo? · 6–9</span>
+    <h2 class="stagger" style="font-size:clamp(1.5rem,3.6vw,2.3rem);color:var(--teal);margin-bottom:.5rem">…y los usos avanzados</h2>
+    <div class="uselist stagger">
+      <div class="ucard teal"><div class="n">6</div><div><div class="ulabel">Recomendación negativa</div><h3>Warning gently</h3><div class="eg">You shouldn't smoke.<span class="es">No deberías fumar.</span></div><div class="en"><b>Use "shouldn't"</b> to advise against something kindly.</div></div></div>
+      <div class="ucard teal"><div class="n">7</div><div><div class="ulabel">Arrepentimiento (pasado)</div><h3>Should have</h3><div class="eg">I should have studied more.<span class="es">Debería haber estudiado más.</span></div><div class="en"><b>Use "should have + participle"</b> for a good thing you didn't do.</div></div></div>
+      <div class="ucard teal"><div class="n">8</div><div><div class="ulabel">Obligación moral suave</div><h3>What is right</h3><div class="eg">You should respect others.<span class="es">Deberías respetar a los demás.</span></div><div class="en"><b>Use it</b> for a duty that feels right, but isn't a strict law.</div></div></div>
+      <div class="ucard teal"><div class="n">9</div><div><div class="ulabel">Ofrecer ayuda / educación</div><h3>Polite offers</h3><div class="eg">Should I open the window?<span class="es">¿Abro la ventana?</span></div><div class="en"><b>Use it</b> to offer help politely or check what someone wants.</div></div></div>
+    </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>In every case, <b>should</b> leaves the choice open. It's the verb of advice, opinion and expectation — never a hard order.</p>
+    </div>
   </section>
 
   <!-- 9 FORM TABLE -->
   <section class="slide" id="s9">
-    <div class="pagemark">08</div>
+    <div class="pagemark">12</div>
     <span class="kicker stagger">La estructura completa</span>
     <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.8rem);margin-bottom:.4rem">Afirmativa, negativa y pregunta</h2>
     <div class="stagger">
@@ -309,11 +429,15 @@
       </tbody>
     </table>
     </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>The structure is easy: just put <b>must</b> or <b>should</b> before the main verb. For questions, move the modal to the front (<b>"Should I…?"</b>). For negatives, add <b>not</b> (<b>mustn't / shouldn't</b>). It stays the same for I, you, he, she, we, they.</p>
+    </div>
   </section>
 
   <!-- 10 DIALOGUE -->
   <section class="slide" id="s10">
-    <div class="pagemark">09</div>
+    <div class="pagemark">13</div>
     <span class="kicker stagger">Diálogo real</span>
     <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:.6rem">Así suenan en una conversación</h2>
     <div class="chat stagger">
@@ -322,11 +446,15 @@
       <div class="bubble a">But I have a meeting at 4 pm…<span class="es">Pero tengo una reunión a las 4…</span></div>
       <div class="bubble b">You <span class="hl">must</span> see a doctor first. Health comes first!<span class="es">Primero tienes que ver a un médico. ¡La salud es lo primero! (obligación)</span></div>
     </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>See how the speaker starts with <b>should</b> (a gentle suggestion: "you should rest") and then switches to <b>must</b> when it really matters ("you must see a doctor"). Choosing the right modal changes the whole tone of the conversation.</p>
+    </div>
   </section>
 
   <!-- 11 KEY TRAP -->
   <section class="slide" id="s11">
-    <div class="pagemark">10</div>
+    <div class="pagemark">14</div>
     <span class="kicker stagger">El error más común</span>
     <h2 class="big stagger" style="font-size:clamp(1.7rem,4vw,3rem)">"Mustn't" no es lo mismo que "don't have to"</h2>
     <div class="stagger">
@@ -337,11 +465,15 @@
       <i>"You <b>don't have to</b> come"</i> → no hace falta, tú decides.</p>
     </div>
     </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p><b>Mustn't</b> means it is <b>forbidden</b> — please don't do it. <b>Don't have to</b> means it is <b>not necessary</b> — you can if you want, but no one is making you. Be careful: they are not the same!</p>
+    </div>
   </section>
 
   <!-- 12 PAST FORMS -->
   <section class="slide" id="s12">
-    <div class="pagemark">11</div>
+    <div class="pagemark">15</div>
     <span class="kicker stagger">Nivel extra · El pasado</span>
     <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:.6rem">"Should have" — el arrepentimiento</h2>
     <p class="lead stagger" style="margin-bottom:.8rem">Para hablar de algo que era buena idea en el pasado pero <b>no hiciste</b>, usamos <b>should have + participio</b>. Sirve para arrepentirse o criticar con suavidad:</p>
@@ -350,11 +482,87 @@
       <div class="ex gold"><span class="en">You <span class="hl" style="color:var(--gold)">shouldn't have</span> said that.</span><span class="es">No deberías haber dicho eso. (ya está dicho)</span></div>
       <div class="ex gold"><span class="en">They <span class="hl" style="color:var(--gold)">must have</span> left already.</span><span class="es">Deben de haberse ido ya. (deducción sobre el pasado)</span></div>
     </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>To talk about the past, add <b>have + past participle</b>. <b>Should have</b> = the right thing to do, but you didn't (regret). <b>Must have</b> = a confident guess about something that already happened.</p>
+    </div>
   </section>
 
-  <!-- 13 QUIZ -->
+  <!-- 13 COMMON MISTAKES -->
   <section class="slide" id="s13">
-    <div class="pagemark">12</div>
+    <div class="pagemark">16</div>
+    <span class="kicker stagger">Errores típicos · Common mistakes</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:.6rem">No caigas en estas trampas</h2>
+    <div class="stagger">
+    <table class="ctable">
+      <thead><tr><th>Incorrecto</th><th>Correcto</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="form"><span class="no">She musts go</span></td><td class="form"><span class="ok">She must go</span></td><td>Los modales no añaden "-s"</td></tr>
+        <tr><td class="form"><span class="no">You must to study</span></td><td class="form"><span class="ok">You must study</span></td><td>Nunca lleva "to" detrás</td></tr>
+        <tr><td class="form"><span class="no">Do I should call?</span></td><td class="form"><span class="ok">Should I call?</span></td><td>No se usa "do/does"</td></tr>
+        <tr><td class="form"><span class="no">You must not come (= no hace falta)</span></td><td class="form"><span class="ok">You don't have to come</span></td><td>"Mustn't" = prohibido, no "opcional"</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>Three golden reminders: never add <b>"-s"</b>, never put <b>"to"</b> after the modal, and never use <b>do/does</b> in questions. And remember — <b>mustn't</b> is not the opposite of <b>must</b>; it means something is forbidden.</p>
+    </div>
+  </section>
+
+  <!-- 14 SPEAKING PRACTICE -->
+  <section class="slide" id="s14">
+    <div class="pagemark">17</div>
+    <span class="kicker stagger">Tu turno · Speaking practice</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:.4rem">Practica hablando en voz alta</h2>
+    <p class="lead stagger" style="margin-bottom:.6rem">Responde estas preguntas usando <b style="color:var(--rust)">must</b> o <b style="color:var(--teal)">should</b>. Di tu respuesta completa en inglés:</p>
+    <div class="examples stagger">
+      <div class="ex teal"><span class="en">What <span class="hl">should</span> you do to learn English faster?</span><span class="es">¿Qué deberías hacer para aprender inglés más rápido?</span><span class="note">Responde: "I should…"</span></div>
+      <div class="ex"><span class="en">What rules <span class="hl">must</span> students follow at your school?</span><span class="es">¿Qué reglas deben seguir los estudiantes en tu escuela?</span><span class="note">Responde: "We must…"</span></div>
+      <div class="ex teal"><span class="en">Give a friend advice about money.</span><span class="es">Dale un consejo a un amigo sobre el dinero.</span><span class="note">Responde: "You should…"</span></div>
+      <div class="ex gold"><span class="en">Tell me something you <span class="hl" style="color:var(--gold)">should have</span> done last week.</span><span class="es">Dime algo que deberías haber hecho la semana pasada.</span><span class="note">Responde: "I should have…"</span></div>
+    </div>
+  </section>
+
+  <!-- 15 USEFUL PHRASES -->
+  <section class="slide" id="s15b">
+    <div class="pagemark">18</div>
+    <span class="kicker stagger">Frases útiles · Useful phrases</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:.6rem">Expresiones que suenan nativas</h2>
+    <p class="lead stagger" style="margin-bottom:.6rem">Combinaciones muy comunes que puedes usar tal cual:</p>
+    <div class="examples stagger">
+      <div class="ex teal"><span class="en">You <span class="hl">should probably</span> ask first.</span><span class="es">Probablemente deberías preguntar primero.</span><span class="note">should probably = consejo suavizado</span></div>
+      <div class="ex teal"><span class="en">Maybe you <span class="hl">should</span> try again.</span><span class="es">Quizás deberías intentarlo otra vez.</span><span class="note">maybe + should = muy amable</span></div>
+      <div class="ex"><span class="en">We <span class="hl">must</span> admit, it was a great idea.</span><span class="es">Hay que admitir que fue una gran idea.</span><span class="note">must admit / must say = enfático</span></div>
+      <div class="ex"><span class="en">You <span class="hl">really must</span> visit Paris.</span><span class="es">Tienes que visitar París de verdad.</span><span class="note">really must = recomendación entusiasta</span></div>
+    </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>Soften advice with <b>"should probably"</b> or <b>"maybe you should"</b>. To sound enthusiastic, use <b>"you really must"</b> — it's a warm, strong recommendation, not an order. And <b>"I must say / I must admit"</b> are fixed phrases native speakers love.</p>
+    </div>
+  </section>
+
+  <!-- 16 WRITING PRACTICE -->
+  <section class="slide" id="s16b">
+    <div class="pagemark">19</div>
+    <span class="kicker stagger">Escribe tú · Writing practice</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:.4rem">Crea tus propias frases</h2>
+    <p class="lead stagger" style="margin-bottom:.6rem">Completa cada situación con tu propia oración. Escribe en inglés:</p>
+    <div class="examples stagger">
+      <div class="ex"><span class="en">A rule in your house: "We <span class="hl">must</span> ________."</span><span class="es">Una regla en tu casa.</span><span class="note">obligación</span></div>
+      <div class="ex teal"><span class="en">Advice for a new student: "You <span class="hl">should</span> ________."</span><span class="es">Consejo para un estudiante nuevo.</span><span class="note">consejo</span></div>
+      <div class="ex"><span class="en">Something forbidden at work: "You <span class="hl">mustn't</span> ________."</span><span class="es">Algo prohibido en el trabajo.</span><span class="note">prohibición</span></div>
+      <div class="ex gold"><span class="en">A past regret: "I <span class="hl" style="color:var(--gold)">should have</span> ________."</span><span class="es">Un arrepentimiento del pasado.</span><span class="note">should have + participio</span></div>
+    </div>
+    <div class="en-note stagger">
+      <span class="flag">In English</span>
+      <p>Write one full sentence for each prompt. Read them out loud to check they sound natural — then try changing <b>must</b> to <b>should</b> and notice how the meaning gets softer.</p>
+    </div>
+  </section>
+
+  <!-- 17 QUIZ -->
+  <section class="slide" id="s15">
+    <div class="pagemark">20</div>
     <span class="kicker stagger">Ponlo a prueba</span>
     <h2 class="stagger" style="font-size:clamp(1.6rem,3.8vw,2.6rem);margin-bottom:.2rem">Elige la opción correcta</h2>
     <div class="quiz stagger">
@@ -378,12 +586,17 @@
         <div class="opts"><span class="opt" data-correct="1">should have</span><span class="opt" data-correct="0">must have</span></div>
         <div class="feedback">✔ Arrepentimiento del pasado → should have.</div>
       </div>
+      <div class="q">
+        <div class="stem">The lights are on — someone <span class="blank">___</span> be home. <span style="font-size:.95rem;color:#6a5b4c">(deducción)</span></div>
+        <div class="opts"><span class="opt" data-correct="1">must</span><span class="opt" data-correct="0">should</span></div>
+        <div class="feedback">✔ Estás casi seguro por la evidencia → must (deducción).</div>
+      </div>
     </div>
   </section>
 
-  <!-- 14 CLOSING -->
-  <section class="slide dark" id="s14">
-    <div class="pagemark">13</div>
+  <!-- 18 CLOSING -->
+  <section class="slide dark" id="s16">
+    <div class="pagemark">21</div>
     <span class="kicker stagger" style="color:var(--gold)">En resumen</span>
     <h1 class="stagger">Recuérdalo <em>así</em></h1>
     <div class="takeaways stagger">
@@ -393,13 +606,17 @@
       <div class="ta"><b>04</b><span><span class="rust">Mustn't</span> = prohibido · <b>don't have to</b> = no hace falta · <span class="teal">shouldn't</span> = mejor no.</span></div>
       <div class="ta"><b>05</b><span><span style="color:var(--gold);font-weight:600">Should have</span> + participio → lo que debiste hacer en el pasado.</span></div>
     </div>
+    <div class="en-note stagger" style="margin-top:1.6rem">
+      <span class="flag">In one line</span>
+      <p>If there's <b>no choice</b>, use <b>must</b>. If it's just <b>good advice</b>, use <b>should</b>. Now go and practise — you should use them every day!</p>
+    </div>
   </section>
 
 </div>
 
 <div class="nav">
   <button id="prev" aria-label="Anterior">‹</button>
-  <span class="count" id="count">1 / 14</span>
+  <span class="count" id="count">1 / 22</span>
   <button id="next" aria-label="Siguiente">›</button>
 </div>
 
