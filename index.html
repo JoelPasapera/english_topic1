@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Must &amp; Should — Modal Verbs</title>
+<title>Must &amp; Should — Guía completa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -19,160 +19,155 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{height:100%}
-  body{
-    font-family:'Outfit',sans-serif;
-    background:var(--ink);
-    color:var(--ink);
-    overflow:hidden;
-  }
+  body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--ink);overflow:hidden}
 
-  /* ---------- DECK ---------- */
-  .deck{position:fixed;inset:0;}
+  .deck{position:fixed;inset:0}
   .slide{
-    position:absolute;inset:0;
-    display:none;
-    flex-direction:column;
-    justify-content:center;
-    padding:6vh 8vw;
-    background:var(--paper);
-    overflow:hidden;
-    animation:fade .6s ease both;
+    position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    padding:6vh 8vw;background:var(--paper);overflow-y:auto;animation:fade .6s ease both;
   }
   .slide.active{display:flex}
   @keyframes fade{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:none}}
-  .slide::before{
-    content:"";position:absolute;inset:0;
-    background-image:radial-gradient(rgba(26,20,16,.04) 1px,transparent 1px);
-    background-size:22px 22px;pointer-events:none;
-  }
+  .slide::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(26,20,16,.04) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;z-index:0}
+  .slide>*{position:relative;z-index:1}
 
-  .kicker{
-    font-family:'JetBrains Mono',monospace;
-    font-size:.8rem;letter-spacing:.32em;text-transform:uppercase;
-    color:var(--rust);margin-bottom:1.4rem;
-    display:flex;align-items:center;gap:.8rem;
-  }
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.32em;text-transform:uppercase;color:var(--rust);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem}
   .kicker::after{content:"";height:1px;width:64px;background:var(--rust);opacity:.5}
 
   h1{font-family:'Fraunces',serif;font-weight:900;line-height:.95;letter-spacing:-.02em}
-  h2{font-family:'Fraunces',serif;font-weight:600;line-height:1.02;letter-spacing:-.01em}
+  h2{font-family:'Fraunces',serif;font-weight:600;line-height:1.05;letter-spacing:-.01em}
   p,li{line-height:1.55}
 
   .stagger>*{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
   .stagger>*:nth-child(1){animation-delay:.05s}
-  .stagger>*:nth-child(2){animation-delay:.15s}
-  .stagger>*:nth-child(3){animation-delay:.25s}
-  .stagger>*:nth-child(4){animation-delay:.35s}
-  .stagger>*:nth-child(5){animation-delay:.45s}
-  .stagger>*:nth-child(6){animation-delay:.55s}
+  .stagger>*:nth-child(2){animation-delay:.13s}
+  .stagger>*:nth-child(3){animation-delay:.21s}
+  .stagger>*:nth-child(4){animation-delay:.29s}
+  .stagger>*:nth-child(5){animation-delay:.37s}
+  .stagger>*:nth-child(6){animation-delay:.45s}
+  .stagger>*:nth-child(7){animation-delay:.53s}
   @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 
-  /* ---------- COVER ---------- */
-  #s1{background:var(--ink);color:var(--cream);justify-content:center}
-  #s1::before{background-image:radial-gradient(rgba(244,236,224,.05) 1px,transparent 1px)}
+  .dark{background:var(--ink);color:var(--cream)}
+  .dark::before{background-image:radial-gradient(rgba(244,236,224,.05) 1px,transparent 1px)}
   .cover-tag{font-family:'JetBrains Mono',monospace;letter-spacing:.32em;font-size:.78rem;color:var(--gold);text-transform:uppercase}
-  #s1 h1{font-size:clamp(3.4rem,11vw,9rem);color:var(--cream);margin:.8rem 0}
+  #s1 h1{font-size:clamp(3.2rem,10vw,8.5rem);color:var(--cream);margin:.8rem 0}
   #s1 h1 em{font-style:italic;font-weight:500;color:var(--gold)}
   .amp{color:var(--rust);font-weight:400;font-style:italic}
-  .cover-sub{max-width:46ch;font-size:1.15rem;color:rgba(251,246,238,.7);margin-top:1rem}
-  .cover-meta{position:absolute;bottom:6vh;left:8vw;right:8vw;display:flex;justify-content:space-between;align-items:flex-end;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,246,238,.5)}
+  .cover-sub{max-width:50ch;font-size:1.15rem;color:rgba(251,246,238,.7);margin-top:1rem}
+  .cover-meta{position:absolute;bottom:6vh;left:8vw;right:8vw;display:flex;justify-content:space-between;align-items:flex-end;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,246,238,.5);z-index:1}
 
-  /* ---------- GENERIC TEXT ---------- */
-  .lead{font-size:clamp(1.1rem,1.7vw,1.4rem);max-width:62ch;color:#473b30}
-  h2.big{font-size:clamp(2.2rem,5.5vw,4.4rem);margin-bottom:1.6rem;max-width:18ch}
+  .lead{font-size:clamp(1.05rem,1.6vw,1.35rem);max-width:64ch;color:#473b30}
+  h2.big{font-size:clamp(2rem,5vw,4rem);margin-bottom:1.4rem;max-width:20ch}
 
-  /* ---------- TWO COLUMN CARDS ---------- */
   .duo{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem}
-  .card{
-    background:var(--cream);border:1.5px solid var(--ink);
-    border-radius:18px;padding:2.2rem;position:relative;
-    box-shadow:8px 8px 0 var(--ink);
-  }
+  .card{background:var(--cream);border:1.5px solid var(--ink);border-radius:18px;padding:2rem;position:relative;box-shadow:8px 8px 0 var(--ink)}
   .card.teal{border-color:var(--teal);box-shadow:8px 8px 0 var(--teal)}
   .card.rust{border-color:var(--rust);box-shadow:8px 8px 0 var(--rust)}
-  .card .word{font-family:'Fraunces',serif;font-weight:900;font-size:2.6rem;line-height:1}
+  .card .word{font-family:'Fraunces',serif;font-weight:900;font-size:2.4rem;line-height:1}
   .card.teal .word{color:var(--teal)}
   .card.rust .word{color:var(--rust)}
-  .card .role{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;margin:.6rem 0 1.2rem;color:#6a5b4c}
-  .card .desc{font-size:1.05rem;color:#473b30}
-  .strength{display:flex;gap:.4rem;margin-top:1.4rem;align-items:center}
-  .strength b{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:#6a5b4c}
+  .card .role{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin:.5rem 0 1rem;color:#6a5b4c}
+  .card .desc{font-size:1.02rem;color:#473b30}
+  .strength{display:flex;gap:.4rem;margin-top:1.2rem;align-items:center}
+  .strength b{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:#6a5b4c}
   .dots{display:flex;gap:.35rem}
   .dot{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--ink)}
   .card.rust .dot.on{background:var(--rust)}
   .card.teal .dot.on{background:var(--teal)}
 
-  /* ---------- EXAMPLE BLOCKS ---------- */
-  .examples{display:flex;flex-direction:column;gap:1rem;margin-top:.5rem}
-  .ex{
-    background:var(--cream);border-left:5px solid var(--rust);
-    border-radius:0 12px 12px 0;padding:1.1rem 1.5rem;
-    display:flex;flex-direction:column;gap:.3rem;
-    box-shadow:0 2px 0 var(--line);
-  }
+  .examples{display:flex;flex-direction:column;gap:.85rem;margin-top:.5rem}
+  .ex{background:var(--cream);border-left:5px solid var(--rust);border-radius:0 12px 12px 0;padding:1rem 1.4rem;display:flex;flex-direction:column;gap:.25rem;box-shadow:0 2px 0 var(--line)}
   .ex.teal{border-left-color:var(--teal)}
-  .ex .en{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600}
+  .ex.gold{border-left-color:var(--gold)}
+  .ex .en{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600}
   .ex .en .hl{color:var(--rust);font-style:italic}
   .ex.teal .en .hl{color:var(--teal)}
-  .ex .es{font-size:.95rem;color:#6a5b4c}
-  .ex .note{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:.2rem}
+  .ex .es{font-size:.92rem;color:#6a5b4c}
+  .ex .note{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:.15rem}
 
-  /* ---------- TABLE ---------- */
   .ctable{width:100%;border-collapse:collapse;margin-top:1rem;background:var(--cream);border:1.5px solid var(--ink);border-radius:14px;overflow:hidden}
-  .ctable th,.ctable td{padding:1rem 1.3rem;text-align:left;border-bottom:1px solid var(--line)}
-  .ctable th{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:var(--cream)}
-  .ctable td:first-child{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem}
+  .ctable th,.ctable td{padding:.85rem 1.2rem;text-align:left;border-bottom:1px solid var(--line);font-size:.98rem}
+  .ctable th{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:var(--cream)}
+  .ctable td:first-child{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem}
   .ctable tr:last-child td{border-bottom:none}
-  .ctable .m-must{color:var(--rust)}
-  .ctable .m-should{color:var(--teal)}
-  .ctable .form{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#473b30}
+  .ctable .m-must{color:var(--rust);font-weight:600}
+  .ctable .m-should{color:var(--teal);font-weight:600}
+  .ctable .form{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#473b30}
+  .ok{color:var(--teal);font-weight:700}
+  .no{color:var(--rust);text-decoration:line-through;opacity:.7}
 
-  /* ---------- TIP / RULE ---------- */
-  .rulebox{display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:center;margin-top:1.4rem;background:var(--ink);color:var(--cream);border-radius:18px;padding:2rem 2.4rem}
-  .rulebox .num{font-family:'Fraunces',serif;font-weight:900;font-size:3.4rem;color:var(--gold);line-height:1}
-  .rulebox p{font-size:1.1rem;color:rgba(251,246,238,.85)}
+  .rulebox{display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:center;margin-top:1.2rem;background:var(--ink);color:var(--cream);border-radius:18px;padding:1.8rem 2.2rem}
+  .rulebox .num{font-family:'Fraunces',serif;font-weight:900;font-size:3.2rem;color:var(--gold);line-height:1}
+  .rulebox p{font-size:1.05rem;color:rgba(251,246,238,.85)}
   .rulebox b{color:var(--gold)}
 
-  .pillrow{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
-  .pill{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.08em;padding:.55rem 1.1rem;border:1.5px solid var(--ink);border-radius:999px;background:var(--cream)}
+  .pillrow{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
+  .pill{font-family:'JetBrains Mono',monospace;font-size:.76rem;letter-spacing:.08em;padding:.5rem 1.05rem;border:1.5px solid var(--ink);border-radius:999px;background:var(--cream)}
   .pill.rust{background:var(--rust);color:var(--cream);border-color:var(--rust)}
   .pill.teal{background:var(--teal);color:var(--cream);border-color:var(--teal)}
 
-  /* ---------- QUIZ ---------- */
-  .quiz{margin-top:1.2rem;display:flex;flex-direction:column;gap:1.4rem;max-width:70ch}
-  .q .stem{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;margin-bottom:.7rem}
-  .q .stem .blank{display:inline-block;min-width:90px;border-bottom:3px dotted var(--rust);text-align:center;color:var(--rust);font-style:italic}
-  .opts{display:flex;gap:.8rem}
-  .opt{cursor:pointer;font-family:'Outfit';font-size:1rem;padding:.5rem 1.4rem;border:1.5px solid var(--ink);border-radius:999px;background:var(--cream);transition:.2s;user-select:none}
+  .scale{margin-top:1.6rem;position:relative;height:120px}
+  .scale .bar{position:absolute;top:54px;left:0;right:0;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--gold),var(--rust))}
+  .scale .stop{position:absolute;top:30px;transform:translateX(-50%);text-align:center;width:140px}
+  .scale .stop .marker{width:18px;height:18px;border-radius:50%;background:var(--ink);margin:0 auto 8px;border:3px solid var(--paper);box-shadow:0 0 0 2px var(--ink)}
+  .scale .stop .w{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem}
+  .scale .stop .lvl{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#6a5b4c;margin-top:42px}
+
+  .chat{display:flex;flex-direction:column;gap:.7rem;margin-top:1rem;max-width:60ch}
+  .bubble{padding:.8rem 1.2rem;border-radius:16px;font-family:'Fraunces',serif;font-size:1.15rem;max-width:85%;position:relative}
+  .bubble .es{display:block;font-family:'Outfit';font-size:.82rem;color:#6a5b4c;margin-top:.25rem}
+  .bubble.a{background:var(--cream);border:1.5px solid var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
+  .bubble.b{background:var(--teal);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+  .bubble.b .es{color:rgba(255,255,255,.75)}
+  .bubble .hl{color:var(--rust);font-style:italic}
+  .bubble.b .hl{color:var(--gold)}
+
+  .uses{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1rem}
+  .use{background:var(--cream);border:1.5px solid var(--ink);border-radius:14px;padding:1.3rem}
+  .use .ico{font-size:1.6rem}
+  .use h3{font-family:'Fraunces',serif;font-size:1.15rem;margin:.5rem 0 .4rem}
+  .use p{font-size:.9rem;color:#6a5b4c}
+  .use .eg{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--rust);margin-top:.6rem;display:block}
+  .use.t .eg{color:var(--teal)}
+
+  .quiz{margin-top:1.1rem;display:flex;flex-direction:column;gap:1.2rem;max-width:72ch}
+  .q .stem{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:600;margin-bottom:.6rem}
+  .q .stem .blank{display:inline-block;min-width:80px;border-bottom:3px dotted var(--rust);text-align:center;color:var(--rust);font-style:italic}
+  .opts{display:flex;gap:.7rem;flex-wrap:wrap}
+  .opt{cursor:pointer;font-family:'Outfit';font-size:.98rem;padding:.45rem 1.3rem;border:1.5px solid var(--ink);border-radius:999px;background:var(--cream);transition:.2s;user-select:none}
   .opt:hover{transform:translateY(-2px)}
   .opt.correct{background:var(--teal);color:#fff;border-color:var(--teal)}
   .opt.wrong{background:var(--rust);color:#fff;border-color:var(--rust);opacity:.55}
+  .feedback{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.05em;color:var(--teal);margin-top:.4rem;opacity:0;transition:.3s}
+  .feedback.show{opacity:1}
 
-  /* ---------- CLOSING ---------- */
-  #s9{background:var(--ink);color:var(--cream);align-items:flex-start;justify-content:center}
-  #s9::before{background-image:radial-gradient(rgba(244,236,224,.05) 1px,transparent 1px)}
-  #s9 h1{font-size:clamp(2.6rem,7vw,6rem);color:var(--cream)}
-  #s9 h1 em{color:var(--gold);font-style:italic;font-weight:500}
-  .takeaways{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
-  .ta{display:flex;gap:1rem;align-items:baseline;font-size:1.2rem;color:rgba(251,246,238,.85)}
-  .ta b{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:.9rem}
+  #s14 h1{font-size:clamp(2.4rem,6.5vw,5.5rem);color:var(--cream)}
+  #s14 h1 em{color:var(--gold);font-style:italic;font-weight:500}
+  .takeaways{margin-top:1.8rem;display:flex;flex-direction:column;gap:.9rem}
+  .ta{display:flex;gap:1rem;align-items:baseline;font-size:1.15rem;color:rgba(251,246,238,.85)}
+  .ta b{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:.88rem}
   .ta .rust{color:#f0865a;font-weight:600}
   .ta .teal{color:#5bb7a8;font-weight:600}
 
-  /* ---------- NAV / UI ---------- */
-  .nav{position:fixed;bottom:2.4vh;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:1.2rem;background:rgba(26,20,16,.9);backdrop-filter:blur(8px);padding:.6rem 1rem;border-radius:999px;z-index:50}
-  .nav button{border:none;background:transparent;color:var(--cream);font-size:1.3rem;cursor:pointer;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;transition:.2s}
+  .pagemark{position:absolute;top:5vh;right:8vw;font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--line);z-index:1}
+  .dark .pagemark{color:rgba(244,236,224,.25)}
+
+  .nav{position:fixed;bottom:2.2vh;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:1.1rem;background:rgba(26,20,16,.92);backdrop-filter:blur(8px);padding:.55rem 1rem;border-radius:999px;z-index:50}
+  .nav button{border:none;background:transparent;color:var(--cream);font-size:1.3rem;cursor:pointer;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;transition:.2s}
   .nav button:hover{background:rgba(244,236,224,.15)}
-  .nav .count{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.1em;color:var(--cream);min-width:54px;text-align:center}
+  .nav .count{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.1em;color:var(--cream);min-width:58px;text-align:center}
   .progress{position:fixed;top:0;left:0;height:4px;background:var(--rust);z-index:60;transition:width .4s ease}
-  .pagemark{position:absolute;top:5vh;right:8vw;font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--line)}
-  .slide.dark .pagemark{color:rgba(244,236,224,.25)}
 
   @media(max-width:760px){
-    .slide{padding:8vh 7vw}
-    .duo{grid-template-columns:1fr}
+    .slide{padding:7vh 6vw;justify-content:flex-start;padding-top:9vh}
+    .duo,.uses{grid-template-columns:1fr}
     .rulebox{grid-template-columns:1fr;text-align:center}
-    .opts{flex-wrap:wrap}
+    .scale{height:230px}
+    .scale .bar{display:none}
+    .scale .stop{position:relative;top:auto;left:auto!important;transform:none;width:100%;display:flex;gap:1rem;align-items:center;text-align:left;margin-bottom:.6rem}
+    .scale .stop .marker{margin:0}
+    .scale .stop .lvl{margin-top:0}
     .cover-meta{flex-direction:column;gap:.5rem;align-items:flex-start}
   }
 </style>
@@ -186,38 +181,42 @@
     <div class="stagger">
       <span class="cover-tag">Gramática inglesa · Verbos modales</span>
       <h1>Must <span class="amp">&amp;</span> <em>Should</em></h1>
-      <p class="cover-sub">Cómo dar consejos, expresar obligaciones y sonar como un verdadero hablante nativo. Una guía clara, con ejemplos reales.</p>
+      <p class="cover-sub">La guía completa para dar consejos, expresar obligaciones, deducir y sonar como un hablante nativo. Con explicaciones claras, decenas de ejemplos y práctica interactiva.</p>
     </div>
     <div class="cover-meta">
-      <span>Lección de inglés · Nivel A2–B1</span>
-      <span>Usa ← → para navegar</span>
+      <span>Lección de inglés · A2 – B1</span>
+      <span>14 diapositivas · usa ← →</span>
     </div>
   </section>
 
-  <!-- 2 INTRO -->
+  <!-- 2 WHAT IS A MODAL -->
   <section class="slide" id="s2">
     <div class="pagemark">01</div>
+    <span class="kicker stagger">Primero, lo básico</span>
+    <h2 class="big stagger" style="font-size:clamp(1.8rem,4.5vw,3.4rem)">¿Qué es un verbo modal?</h2>
+    <p class="lead stagger" style="margin-bottom:1rem">Un <b>verbo modal</b> no describe una acción, sino la <b>actitud</b> del hablante hacia esa acción: si es obligatoria, posible, recomendable o probable. Son auxiliares y tienen tres reglas muy fáciles que <i>nunca</i> cambian:</p>
     <div class="stagger">
-      <span class="kicker">¿Por qué importan?</span>
-      <h2 class="big">Dos palabras pequeñas que cambian el tono de todo lo que dices.</h2>
-      <p class="lead">En inglés no decimos las cosas con la misma fuerza siempre. <b>Must</b> y <b>should</b> son <i>verbos modales</i>: nos ayudan a expresar cuán necesario, recomendable u obligatorio es algo. Elegir bien entre ellos es la diferencia entre dar una orden y dar un consejo amable.</p>
-      <div class="pillrow">
-        <span class="pill rust">MUST = obligación fuerte</span>
-        <span class="pill teal">SHOULD = consejo / recomendación</span>
-        <span class="pill">+ verbo en infinitivo sin "to"</span>
-      </div>
+    <table class="ctable">
+      <thead><tr><th>Regla</th><th>Explicación</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td>1. Sin "to"</td><td>El verbo que sigue va en infinitivo, pero sin "to"</td><td class="form"><span class="ok">You must go</span> &nbsp; <span class="no">to go</span></td></tr>
+        <tr><td>2. Sin -s</td><td>No cambian en la 3ª persona (he/she/it)</td><td class="form"><span class="ok">She should study</span> &nbsp; <span class="no">shoulds</span></td></tr>
+        <tr><td>3. Sin do/does</td><td>Para preguntas y negaciones no usan auxiliar</td><td class="form"><span class="ok">Should I go?</span> &nbsp; <span class="no">Do I should</span></td></tr>
+      </tbody>
+    </table>
     </div>
   </section>
 
   <!-- 3 SIDE BY SIDE -->
   <section class="slide" id="s3">
     <div class="pagemark">02</div>
-    <span class="kicker stagger">Cara a cara</span>
+    <span class="kicker stagger">La idea central</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.8rem);margin-bottom:1.2rem">Misma estructura, fuerza muy distinta</h2>
     <div class="duo stagger">
       <div class="card rust">
         <div class="word">must</div>
         <div class="role">Obligación · Necesidad · Regla</div>
-        <p class="desc">Algo es <b>obligatorio</b> o totalmente necesario. No hay opción: viene de una regla, una ley o una fuerte convicción del hablante.</p>
+        <p class="desc">Algo es <b>obligatorio</b> o totalmente necesario. No hay opción: nace de una regla, una ley o una fuerte convicción del que habla.</p>
         <div class="strength"><b>Fuerza</b><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
       </div>
       <div class="card teal">
@@ -229,118 +228,170 @@
     </div>
   </section>
 
-  <!-- 4 MUST EXAMPLES -->
+  <!-- 4 SCALE -->
   <section class="slide" id="s4">
     <div class="pagemark">03</div>
-    <span class="kicker stagger">MUST · Ejemplos en contexto</span>
-    <h2 class="stagger" style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:1rem;color:var(--rust)">Cuando no hay opción</h2>
-    <div class="examples stagger">
-      <div class="ex">
-        <span class="en">You <span class="hl">must</span> wear a seatbelt.</span>
-        <span class="es">Debes llevar puesto el cinturón.</span>
-        <span class="note">Regla / ley — obligación externa</span>
-      </div>
-      <div class="ex">
-        <span class="en">I <span class="hl">must</span> finish this report tonight.</span>
-        <span class="es">Tengo que terminar este informe esta noche.</span>
-        <span class="note">Necesidad fuerte del propio hablante</span>
-      </div>
-      <div class="ex">
-        <span class="en">Students <span class="hl">must not</span> use phones in the exam.</span>
-        <span class="es">Los estudiantes no deben usar el móvil en el examen.</span>
-        <span class="note">Must not = prohibición</span>
-      </div>
+    <span class="kicker stagger">Una escala mental</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.8rem)">Imagina los modales como una balanza de presión</h2>
+    <p class="lead stagger">De izquierda (suave) a derecha (fuerte). Esto te ayuda a elegir el verbo según cuánta presión quieras transmitir:</p>
+    <div class="scale stagger">
+      <div class="bar"></div>
+      <div class="stop" style="left:12%"><div class="marker"></div><div class="w" style="color:var(--teal)">could</div><div class="lvl">opción suave</div></div>
+      <div class="stop" style="left:38%"><div class="marker"></div><div class="w" style="color:var(--teal)">should</div><div class="lvl">recomendación</div></div>
+      <div class="stop" style="left:64%"><div class="marker"></div><div class="w" style="color:var(--gold)">have to</div><div class="lvl">obligación externa</div></div>
+      <div class="stop" style="left:88%"><div class="marker"></div><div class="w" style="color:var(--rust)">must</div><div class="lvl">obligación fuerte</div></div>
     </div>
   </section>
 
-  <!-- 5 SHOULD EXAMPLES -->
+  <!-- 5 MUST USES -->
   <section class="slide" id="s5">
     <div class="pagemark">04</div>
-    <span class="kicker stagger">SHOULD · Ejemplos en contexto</span>
-    <h2 class="stagger" style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:1rem;color:var(--teal)">Cuando das un consejo</h2>
-    <div class="examples stagger">
-      <div class="ex teal">
-        <span class="en">You <span class="hl">should</span> drink more water.</span>
-        <span class="es">Deberías beber más agua.</span>
-        <span class="note">Consejo amable</span>
-      </div>
-      <div class="ex teal">
-        <span class="en">We <span class="hl">should</span> leave early to avoid traffic.</span>
-        <span class="es">Deberíamos salir temprano para evitar el tráfico.</span>
-        <span class="note">Sugerencia / buena idea</span>
-      </div>
-      <div class="ex teal">
-        <span class="en">You <span class="hl">shouldn't</span> eat so late at night.</span>
-        <span class="es">No deberías comer tan tarde por la noche.</span>
-        <span class="note">Shouldn't = consejo en negativo</span>
-      </div>
+    <span class="kicker stagger">MUST · Sus tres usos</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);color:var(--rust);margin-bottom:.6rem">Para qué sirve "must"</h2>
+    <div class="uses stagger">
+      <div class="use"><div class="ico">📋</div><h3>1. Obligación</h3><p>Reglas, normas y leyes que hay que cumplir.</p><span class="eg">You must wear a helmet.</span></div>
+      <div class="use"><div class="ico">🔥</div><h3>2. Necesidad fuerte</h3><p>Algo que el hablante siente como urgente o importante.</p><span class="eg">I must call my mother today.</span></div>
+      <div class="use"><div class="ico">🧠</div><h3>3. Deducción lógica</h3><p>Estás casi seguro de algo por la evidencia.</p><span class="eg">She's not here — she must be sick.</span></div>
     </div>
   </section>
 
-  <!-- 6 FORM TABLE -->
+  <!-- 6 MUST EXAMPLES -->
   <section class="slide" id="s6">
     <div class="pagemark">05</div>
-    <span class="kicker stagger">La estructura</span>
-    <h2 class="big stagger" style="font-size:clamp(1.8rem,4.5vw,3.4rem)">Siempre igual, sin complicaciones</h2>
+    <span class="kicker stagger">MUST · Ejemplos en contexto</span>
+    <h2 class="stagger" style="font-size:clamp(1.5rem,3.6vw,2.4rem);color:var(--rust);margin-bottom:.8rem">Cuando no hay opción</h2>
+    <div class="examples stagger">
+      <div class="ex"><span class="en">You <span class="hl">must</span> show your passport at the airport.</span><span class="es">Debes mostrar tu pasaporte en el aeropuerto.</span><span class="note">Regla / ley — obligación externa</span></div>
+      <div class="ex"><span class="en">I <span class="hl">must</span> finish this report tonight.</span><span class="es">Tengo que terminar este informe esta noche.</span><span class="note">Necesidad fuerte del hablante</span></div>
+      <div class="ex"><span class="en">It's late — they <span class="hl">must</span> be home by now.</span><span class="es">Es tarde; ya deben de estar en casa.</span><span class="note">Deducción: estoy casi seguro</span></div>
+      <div class="ex"><span class="en">Students <span class="hl">must not</span> use phones in the exam.</span><span class="es">Los estudiantes no deben usar el móvil en el examen.</span><span class="note">Must not = prohibición total</span></div>
+    </div>
+  </section>
+
+  <!-- 7 SHOULD USES -->
+  <section class="slide" id="s7">
+    <div class="pagemark">06</div>
+    <span class="kicker stagger">SHOULD · Sus usos</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);color:var(--teal);margin-bottom:.6rem">Para qué sirve "should"</h2>
+    <div class="uses stagger">
+      <div class="use t"><div class="ico">💡</div><h3>1. Consejo</h3><p>Recomendar lo que crees que es mejor para alguien.</p><span class="eg">You should see a doctor.</span></div>
+      <div class="use t"><div class="ico">⚖️</div><h3>2. Opinión</h3><p>Decir lo que consideras correcto o ideal.</p><span class="eg">They should apologize.</span></div>
+      <div class="use t"><div class="ico">🔮</div><h3>3. Expectativa</h3><p>Algo que probablemente va a pasar.</p><span class="eg">The train should arrive soon.</span></div>
+    </div>
+  </section>
+
+  <!-- 8 SHOULD EXAMPLES -->
+  <section class="slide" id="s8">
+    <div class="pagemark">07</div>
+    <span class="kicker stagger">SHOULD · Ejemplos en contexto</span>
+    <h2 class="stagger" style="font-size:clamp(1.5rem,3.6vw,2.4rem);color:var(--teal);margin-bottom:.8rem">Cuando das un consejo</h2>
+    <div class="examples stagger">
+      <div class="ex teal"><span class="en">You <span class="hl">should</span> drink more water.</span><span class="es">Deberías beber más agua.</span><span class="note">Consejo amable</span></div>
+      <div class="ex teal"><span class="en">We <span class="hl">should</span> leave early to avoid traffic.</span><span class="es">Deberíamos salir temprano para evitar el tráfico.</span><span class="note">Sugerencia / buena idea</span></div>
+      <div class="ex teal"><span class="en">This movie <span class="hl">should</span> be really good.</span><span class="es">Esta película debería ser muy buena.</span><span class="note">Expectativa probable</span></div>
+      <div class="ex teal"><span class="en">You <span class="hl">shouldn't</span> eat so late at night.</span><span class="es">No deberías comer tan tarde por la noche.</span><span class="note">Shouldn't = consejo en negativo</span></div>
+    </div>
+  </section>
+
+  <!-- 9 FORM TABLE -->
+  <section class="slide" id="s9">
+    <div class="pagemark">08</div>
+    <span class="kicker stagger">La estructura completa</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.8rem);margin-bottom:.4rem">Afirmativa, negativa y pregunta</h2>
     <div class="stagger">
     <table class="ctable">
-      <thead>
-        <tr><th>Forma</th><th>Must</th><th>Should</th></tr>
-      </thead>
+      <thead><tr><th>Forma</th><th>Must</th><th>Should</th></tr></thead>
       <tbody>
-        <tr><td>Afirmativa</td><td class="form">subject + <span class="m-must">must</span> + verbo</td><td class="form">subject + <span class="m-should">should</span> + verbo</td></tr>
+        <tr><td>Afirmativa</td><td class="form">I <span class="m-must">must</span> study.</td><td class="form">I <span class="m-should">should</span> study.</td></tr>
         <tr><td>Negativa</td><td class="form"><span class="m-must">must not / mustn't</span></td><td class="form"><span class="m-should">should not / shouldn't</span></td></tr>
-        <tr><td>Pregunta</td><td class="form"><span class="m-must">Must</span> I go?</td><td class="form"><span class="m-should">Should</span> I go?</td></tr>
-        <tr><td>Regla de oro</td><td class="form">nunca lleva "to" después</td><td class="form">igual para todas las personas</td></tr>
+        <tr><td>Pregunta</td><td class="form"><span class="m-must">Must</span> I study?</td><td class="form"><span class="m-should">Should</span> I study?</td></tr>
+        <tr><td>Respuesta corta</td><td class="form">Yes, you must. / No, you needn't.</td><td class="form">Yes, you should. / No, you shouldn't.</td></tr>
       </tbody>
     </table>
     </div>
   </section>
 
-  <!-- 7 KEY TRAP -->
-  <section class="slide" id="s7">
-    <div class="pagemark">06</div>
+  <!-- 10 DIALOGUE -->
+  <section class="slide" id="s10">
+    <div class="pagemark">09</div>
+    <span class="kicker stagger">Diálogo real</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:.6rem">Así suenan en una conversación</h2>
+    <div class="chat stagger">
+      <div class="bubble a">I feel terrible. I have a headache and a fever.<span class="es">Me siento fatal. Tengo dolor de cabeza y fiebre.</span></div>
+      <div class="bubble b">You <span class="hl">should</span> rest and drink some tea.<span class="es">Deberías descansar y tomar un té. (consejo)</span></div>
+      <div class="bubble a">But I have a meeting at 4 pm…<span class="es">Pero tengo una reunión a las 4…</span></div>
+      <div class="bubble b">You <span class="hl">must</span> see a doctor first. Health comes first!<span class="es">Primero tienes que ver a un médico. ¡La salud es lo primero! (obligación)</span></div>
+    </div>
+  </section>
+
+  <!-- 11 KEY TRAP -->
+  <section class="slide" id="s11">
+    <div class="pagemark">10</div>
     <span class="kicker stagger">El error más común</span>
-    <h2 class="big stagger" style="font-size:clamp(1.9rem,4.5vw,3.4rem)">"Mustn't" no es lo mismo que "don't have to"</h2>
+    <h2 class="big stagger" style="font-size:clamp(1.7rem,4vw,3rem)">"Mustn't" no es lo mismo que "don't have to"</h2>
     <div class="stagger">
     <div class="rulebox">
       <div class="num">!</div>
-      <p><b>Mustn't</b> = está <b>prohibido</b> (no lo hagas). · <b>Don't have to</b> = <b>no es necesario</b> (puedes, pero no es obligatorio). <br><br>Ejemplo: <i>"You <b>mustn't</b> smoke here"</i> (prohibido) ≠ <i>"You <b>don't have to</b> come"</i> (no hace falta que vengas).</p>
+      <p><b>Mustn't</b> = está <b>prohibido</b> (no lo hagas). · <b>Don't have to</b> = <b>no es necesario</b> (puedes, pero no es obligatorio).<br><br>
+      <i>"You <b>mustn't</b> smoke here"</i> → prohibido.<br>
+      <i>"You <b>don't have to</b> come"</i> → no hace falta, tú decides.</p>
     </div>
     </div>
   </section>
 
-  <!-- 8 QUIZ -->
-  <section class="slide" id="s8">
-    <div class="pagemark">07</div>
+  <!-- 12 PAST FORMS -->
+  <section class="slide" id="s12">
+    <div class="pagemark">11</div>
+    <span class="kicker stagger">Nivel extra · El pasado</span>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:.6rem">"Should have" — el arrepentimiento</h2>
+    <p class="lead stagger" style="margin-bottom:.8rem">Para hablar de algo que era buena idea en el pasado pero <b>no hiciste</b>, usamos <b>should have + participio</b>. Sirve para arrepentirse o criticar con suavidad:</p>
+    <div class="examples stagger">
+      <div class="ex gold"><span class="en">I <span class="hl" style="color:var(--gold)">should have</span> studied more.</span><span class="es">Debería haber estudiado más. (pero no lo hice)</span></div>
+      <div class="ex gold"><span class="en">You <span class="hl" style="color:var(--gold)">shouldn't have</span> said that.</span><span class="es">No deberías haber dicho eso. (ya está dicho)</span></div>
+      <div class="ex gold"><span class="en">They <span class="hl" style="color:var(--gold)">must have</span> left already.</span><span class="es">Deben de haberse ido ya. (deducción sobre el pasado)</span></div>
+    </div>
+  </section>
+
+  <!-- 13 QUIZ -->
+  <section class="slide" id="s13">
+    <div class="pagemark">12</div>
     <span class="kicker stagger">Ponlo a prueba</span>
-    <h2 class="stagger" style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:.4rem">¿Must o Should? Toca tu respuesta</h2>
+    <h2 class="stagger" style="font-size:clamp(1.6rem,3.8vw,2.6rem);margin-bottom:.2rem">Elige la opción correcta</h2>
     <div class="quiz stagger">
       <div class="q">
-        <div class="stem">Drivers <span class="blank">___</span> stop at a red light. <span style="font-size:1rem;color:#6a5b4c">(es la ley)</span></div>
+        <div class="stem">Drivers <span class="blank">___</span> stop at a red light. <span style="font-size:.95rem;color:#6a5b4c">(es la ley)</span></div>
         <div class="opts"><span class="opt" data-correct="1">must</span><span class="opt" data-correct="0">should</span></div>
+        <div class="feedback">✔ Es una ley → obligación → must.</div>
       </div>
       <div class="q">
-        <div class="stem">You look tired — you <span class="blank">___</span> take a break. <span style="font-size:1rem;color:#6a5b4c">(consejo)</span></div>
+        <div class="stem">You look tired — you <span class="blank">___</span> take a break. <span style="font-size:.95rem;color:#6a5b4c">(consejo)</span></div>
         <div class="opts"><span class="opt" data-correct="0">must</span><span class="opt" data-correct="1">should</span></div>
+        <div class="feedback">✔ Es un consejo amable → should.</div>
       </div>
       <div class="q">
-        <div class="stem">Passengers <span class="blank">___</span> smoke on the plane. <span style="font-size:1rem;color:#6a5b4c">(prohibido)</span></div>
+        <div class="stem">Passengers <span class="blank">___</span> smoke on the plane. <span style="font-size:.95rem;color:#6a5b4c">(prohibido)</span></div>
         <div class="opts"><span class="opt" data-correct="1">mustn't</span><span class="opt" data-correct="0">shouldn't</span></div>
+        <div class="feedback">✔ Prohibición total → mustn't.</div>
+      </div>
+      <div class="q">
+        <div class="stem">I <span class="blank">___</span> studied — I failed the test. <span style="font-size:.95rem;color:#6a5b4c">(arrepentimiento)</span></div>
+        <div class="opts"><span class="opt" data-correct="1">should have</span><span class="opt" data-correct="0">must have</span></div>
+        <div class="feedback">✔ Arrepentimiento del pasado → should have.</div>
       </div>
     </div>
   </section>
 
-  <!-- 9 CLOSING -->
-  <section class="slide dark" id="s9">
-    <div class="pagemark">08</div>
+  <!-- 14 CLOSING -->
+  <section class="slide dark" id="s14">
+    <div class="pagemark">13</div>
     <span class="kicker stagger" style="color:var(--gold)">En resumen</span>
     <h1 class="stagger">Recuérdalo <em>así</em></h1>
     <div class="takeaways stagger">
-      <div class="ta"><b>01</b><span><span class="rust">Must</span> → obligación, regla, necesidad fuerte. Sin opción.</span></div>
-      <div class="ta"><b>02</b><span><span class="teal">Should</span> → consejo, recomendación, buena idea. Hay opción.</span></div>
-      <div class="ta"><b>03</b><span>Ambos van seguidos del verbo en infinitivo <span class="rust">sin "to"</span>.</span></div>
-      <div class="ta"><b>04</b><span><span class="rust">Mustn't</span> = prohibido · <span class="teal">Shouldn't</span> = mejor no.</span></div>
+      <div class="ta"><b>01</b><span><span class="rust">Must</span> → obligación, regla, necesidad fuerte y deducción segura.</span></div>
+      <div class="ta"><b>02</b><span><span class="teal">Should</span> → consejo, opinión y expectativa. Siempre hay opción.</span></div>
+      <div class="ta"><b>03</b><span>Ambos van con el verbo en infinitivo <span class="rust">sin "to"</span> y no cambian con he/she/it.</span></div>
+      <div class="ta"><b>04</b><span><span class="rust">Mustn't</span> = prohibido · <b>don't have to</b> = no hace falta · <span class="teal">shouldn't</span> = mejor no.</span></div>
+      <div class="ta"><b>05</b><span><span style="color:var(--gold);font-weight:600">Should have</span> + participio → lo que debiste hacer en el pasado.</span></div>
     </div>
   </section>
 
@@ -348,7 +399,7 @@
 
 <div class="nav">
   <button id="prev" aria-label="Anterior">‹</button>
-  <span class="count" id="count">1 / 9</span>
+  <span class="count" id="count">1 / 14</span>
   <button id="next" aria-label="Siguiente">›</button>
 </div>
 
@@ -362,18 +413,19 @@
     slides.forEach((s,k)=>s.classList.toggle('active',k===i));
     count.textContent=(i+1)+' / '+slides.length;
     bar.style.width=((i+1)/slides.length*100)+'%';
+    slides[i].scrollTop=0;
   }
   document.getElementById('next').onclick=()=>show(i+1);
   document.getElementById('prev').onclick=()=>show(i-1);
   document.addEventListener('keydown',e=>{
-    if(e.key==='ArrowRight'||e.key===' ')show(i+1);
+    if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();show(i+1);}
     if(e.key==='ArrowLeft')show(i-1);
   });
-  // quiz
   document.querySelectorAll('.q').forEach(q=>{
     q.querySelectorAll('.opt').forEach(opt=>{
       opt.onclick=()=>{
         q.querySelectorAll('.opt').forEach(o=>o.classList.add(o.dataset.correct==='1'?'correct':'wrong'));
+        const fb=q.querySelector('.feedback'); if(fb)fb.classList.add('show');
       };
     });
   });
